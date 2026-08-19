@@ -1,0 +1,72 @@
+serial_number,unit_number,location,brand,description,model,status,building,out_of_service
+75875,1,HQ,Toyota,"6,500 lb capacity, 4-wheel electric cushion tire forklift",8FBCU32,In use,AE,No
+68599,2,HQ,Toyota,"5,000 lb capacity, 4-wheel electric cushion tire forklift",8FBCHU25,In use,AE,No
+24025,5,HQ,Toyota,"3-wheel electric sit-down forklift. 4,000 lb lifting capacity",7FBEU20,In use,AE,No
+A1X34H00378,6,HQ,Linde,"2.0-tonne (4,000 lb) capacity electric counterbalance forklift 4-wheel",E20P,In use,AE,No
+22849,7,HQ,Toyota,"3-wheel electric sit-down forklift  1,800 kg (approx. 3,500–4,000 lbs) load capacity",8FBE18U,In use,AN,No
+20459,8,HQ,Toyota,"3-wheel electric sit-down forklift  1,800 kg (approx. 3,500–4,000 lbs) load capacity",8FBE18U,Out of service,AN,No
+16428,9,HQ,Toyota,"3-wheel electric cushion tire forklift with a 4,000 lb capacity",8FBE20U,Out of service,AN,No
+17804,11,HQ,Toyota,"3-wheel electric cushion tire forklift with a 4,000 lb capacity",8FBE20U,Out of service,AN,No
+66525,12,HQ,Toyota,"5,000 lb capacity, 4-wheel electric cushion tire forklift",8FBCU25,Out of service,AE,No
+A1X346H00377,13,HQ,Linde,"2.0-tonne (4,000 lb) capacity electric counterbalance forklift 4-wheel",E20P,In use,AE,No
+13303,14,HQ,Toyota,"3-wheel electric cushion-tire forklift, capacity of 4,000 lbs",8FBE20U,Out of service,AN,No
+76430,15,HQ,Toyota,"5,000 lb capacity, 4-wheel electric cushion tire forklift,",8FBCU25,In use,AE,No
+19778,16,HQ,Toyota,"3-wheel electric cushion-tire forklift with a 3,000 lb load capacity",7FBEU15,Out of service,AE,No
+68435,17,HQ,Toyota,"6,000 lb capacity, 4-wheel electric cushion tire forklift",8FBCU30,Out of service,AE,No
+13790,19,HQ,Toyota,"3-wheel electric sit-down forklift with a 3,500 lb load capacity",8FBE18U,Out of service,AE,No
+475-17-10346,20,HQ,RAYMOND,4-wheel sit-down cushion tire electric forklift,4750C50S,Out of service,AE,No
+425-24-0084315,22,HQ,RAYMOND,"4-stage quad mast stand-up counterbalanced forklift (Docker), 4,000 lb capacity,",425-C40QM,In use,AE,No
+425-24-004364,23,HQ,RAYMOND,"4-stage quad mast stand-up counterbalanced forklift (Docker), 4,000 lb capacity,",425-C40QM,In use,AE,No
+DSS-05-06222,24 / 21,HQ,RAYMOND,"stand-up, electric counterbalanced forklift truck (Docker), base capacity of 3,500 lbs",DSS350,Out of service,AE,No
+1A278756,25,HQ,Cascade (300series),"5,500 lb capacity Crown stand-up order picker",55F-SSS-A062,In use,AE,No
+S300-02448-98,26,HQ,RAYMOND,"DSS300TT (Dockstocker)  3,000 lb capacity electric stand-up counterbalanced forklift",DSS300TT,Out of service,AE,No
+1A335891,27,HQ,No on site,No on site,No on site,Out of service,AE,No
+425-13-37082,28,HQ,RAYMOND,"3-wheel stand-up electric counterbalanced forklift, (docker) 4,000 lbs load capacity",425-C40TT,In use,AE,No
+1A460007,30,HQ,Crown,"4- wheels reach truck with a 4,500 lb capacity",RM60 25-45,In use,AE,No
+C861N02873H,31,HQ,Yale,"electric narrow aisle reach truck capacity 4,500 lbs (2,041 kg).",NR045EANL36TE101,In use,AE,No
+14264,38,HQ,Toyota,"3-wheel electric sit-down forklift. 4,000 lb lifting capacity",7FBEU20,Out of service,AE,No
+14273,39,HQ,Toyota,"3-wheel electric sit-down forklift. 4,000 lb lifting capacity",7FBEU20,Out of service,AN,No
+85301,67,HQ,Toyota,"5,000 lb capacity, 4-wheel electric cushion tire forklift (Clamp)",8FBCU25,In use,AE,No
+425-21-70750,132,HQ,RAYMOND,"3-wheel stand-up electric counterbalanced forklift, (docker) 4,000 lbs load capacity",425-C40TT,In use,AE,No
+69670,150,HQ,Toyota,"5,000 lb capacity, electric cushion-tire forklift",7FBCU25,Out of service,AE,No
+74197,200,HQ,Toyota,"5,000 lb capacity, 4-wheel electric cushion tire forklift,",8FBCU25,In use,AE,No
+470-09-HM30012,C50,HQ,RAYMOND,"4-wheel electric sit-down forklift with a 5,000 lb capacity",470C50HM,In use,AE,No
+750-20-AC81595,833335,Meadow,RAYMOND,"electric reach truck 4,500 lb capacity and narrow-aisle",750-R45TT,In use,Bonded,No
+750-20-AC81605,833337,Meadow,RAYMOND,"electric reach truck 4,500 lb capacity and narrow-aisle",750-R45TT,In use,Bonded,No
+750-25-AD0106820,978201,Meadow,RAYMOND,"stand-up electric deep-reach forklift  3,200 lbs capacity",750-DR32TT,In use,Bonded,No
+750-21-AC84739,860063,Meadow,RAYMOND,"stand-up electric deep-reach forklift  3,200 lbs capacity",750-DR32TT,In use,Bonded,No
+750-23-AD0094921,920085,Meadow,RAYMOND,"stand-up electric deep-reach forklift  3,200 lbs capacity",750-DR32TT,In use,NTD,Yes
+750-23-AD0094924,920086,Meadow,RAYMOND,"stand-up electric deep-reach forklift  3,200 lbs capacity",750-DR32TT,In use,NTD,No
+750-20-AC81613,,Meadow,RAYMOND,"electric reach truck 4,500 lb capacity and narrow-aisle",750-R45TT,In use,NTD,No
+425-24-0084230,945657,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,Bonded,No
+425-24-0084243,945658,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,NTD,No
+425-22-77707,906619,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,Bonded,No
+425-24-0084298,945965,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,NTD,No
+425-22-77706,906618,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,NTD,No
+425-24-0084150,945227,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,Bonded,No
+425-24-0084275,945659,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,NTD,No
+425-24-0084278,945660,Meadow,RAYMOND,stand-up electric deep-reach forklift  4000lbs capacity,425-C40QM,In use,Bonded,No
+750-25-AD-0106817,8,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+750-22-AD-92866,2,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+750-25-AD-0106808,1,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+750-23-AD-0094926,6,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+750-23-AD0093202,4,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,Yes
+750-22-AD92877,5,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+750-25-AD0106806,7,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+750-20-AC-78601,9,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+750-25-AD-0106825,3,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,750-DR32TT,In use,CH1,No
+425-24-0084156,15,Campbell Heights,RAYMOND,Stand Up Forklift,425-C40QM,In use,CH1,No
+425-22-77721,14,Campbell Heights,RAYMOND,Stand Up Forklift,425-C40TT,In use,CH1,No
+425-25-0090082,12,Campbell Heights,RAYMOND,Stand Up Forklift,425-C40QM,In use,CH1,No
+425-25-0090090,13,Campbell Heights,RAYMOND,36-volt electric deep-reach forklift,425-C40QM,In use,CH1,No
+560-25-B0073368,0,Campbell Heights,RAYMOND,Enclosed Order Picker,560-OPC30TT,In use,CH1,No
+742-10-CA21990,,Campbell Heights,RAYMOND,Reach Truck,742DR32TT,In use,CH1,No
+425-14-40374,,Campbell Heights,RAYMOND,Stand Up Forklift,425-C40TT,In use,CH1,No
+425-20-69783,,Campbell Heights,RAYMOND,Stand Up Forklift,425-C40TT,In use,CH1,No
+0757CM,,Campbell Heights,JOHNSTON EQUIPMENT,Battery,,Out of service,CH1,No
+3692A0,,Campbell Heights,JOHNSTON EQUIPMENT,Battery,,In use,CH1,No
+GJB0194,,Campbell Heights,JOHNSTON EQUIPMENT,Battery,,In use,CH1,No
+2976A0,,Campbell Heights,JOHNSTON EQUIPMENT,Battery,,In use,CH1,No
+2967A0,,Campbell Heights,JOHNSTON EQUIPMENT,Battery,,In use,CH1,No
+machine C,C,Meadow,MDW,,newly added1,Active,,No
+Mashin B,B,Meadow,MDW,,newly added 2,Active,,No
