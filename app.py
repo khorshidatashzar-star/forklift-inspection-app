@@ -1666,11 +1666,23 @@ def run_driver():
                         key=f"drv_note_{gi}_{j}"
                     )
 
-                    pic = st.file_uploader(
+                    photo_mode = st.radio(
                         f"{comp} — Photo (optional)",
-                        type=["jpg","jpeg","png","webp"],
-                        key=f"drv_photo_{gi}_{j}"
+                        ["📷 Take Photo", "📁 Upload Photo"],
+                        horizontal=True,
+                        key=f"drv_photo_mode_{gi}_{j}"
                     )
+                    if photo_mode == "📷 Take Photo":
+                        pic = st.camera_input(
+                            f"{comp} — Open Camera",
+                            key=f"drv_camera_{gi}_{j}"
+                        )
+                    else:
+                        pic = st.file_uploader(
+                            f"{comp} — Upload Photo",
+                            type=["jpg", "jpeg", "png", "webp"],
+                            key=f"drv_photo_{gi}_{j}"
+                        )
 
                     if not txt.strip():
                         issue_validation.append(
@@ -2416,15 +2428,19 @@ def manager_actions(u):
                             )
                             st.rerun()
 
+        # Match New Machine Requests to the selected shift, like Today's Overview.
+        # Keep requests in the database for other shifts and for later review.
         unlisted = query(
             """SELECT ar.case_number,ar.serial_number,ar.found_location,ar.brand,ar.model,ar.unit_number,
-                      ar.status,i.operator_name,i.issue_found
+                      ar.status,i.operator_name,i.issue_found,i.shift
                FROM asset_review ar
                LEFT JOIN inspections i ON i.case_number=ar.case_number
                WHERE ar.found_location=?
                ORDER BY ar.id DESC""",
             (u["location"],)
         )
+        if shift_view != "All Shifts" and not unlisted.empty:
+            unlisted = unlisted[unlisted["shift"].fillna("") == shift_view].copy()
         if not unlisted.empty:
             st.markdown("### New Machine Requests")
             st.dataframe(humanize_columns(unlisted), hide_index=True, use_container_width=True)
@@ -2573,11 +2589,23 @@ def corrective_actions(u):
                         key=f"repair_note_{r.id}"
                     )
 
-                    photo = st.file_uploader(
+                    repair_photo_mode = st.radio(
                         "After-repair photo (optional)",
-                        type=["jpg","jpeg","png","webp"],
-                        key=f"repair_photo_{r.id}"
+                        ["📷 Take Photo", "📁 Upload Photo"],
+                        horizontal=True,
+                        key=f"repair_photo_mode_{r.id}"
                     )
+                    if repair_photo_mode == "📷 Take Photo":
+                        photo = st.camera_input(
+                            "Take After-Repair Photo",
+                            key=f"repair_camera_{r.id}"
+                        )
+                    else:
+                        photo = st.file_uploader(
+                            "Upload After-Repair Photo",
+                            type=["jpg", "jpeg", "png", "webp"],
+                            key=f"repair_photo_{r.id}"
+                        )
 
                     if st.button(
                         "✅ FIXED",
@@ -3519,6 +3547,70 @@ def it_actions(u):
                     st.rerun()
                 except Exception as ex:
                     st.error(str(ex))
+
+        st.markdown("### Reset Staff Password")
+        st.caption("IT can assign a temporary password. The staff member must change it at next login.")
+
+        if u.get("test_mode") or int(u.get("id", 0)) < 0:
+            st.warning("Password resets require a real IT account login, not the temporary test portal.")
+        elif str(u.get("role")) != "IT":
+            st.error("Only IT staff can reset passwords.")
+        elif users.empty:
+            st.info("No staff users available.")
+        else:
+            resettable = users[
+                users.username.astype(str).str.lower() != "itadmin"
+            ].copy()
+            if resettable.empty:
+                st.info("No eligible staff users available.")
+            else:
+                reset_labels = {
+                    f"{r.full_name} • {r.username} • {r.role}": int(r.id)
+                    for _, r in resettable.iterrows()
+                }
+                reset_choice = st.selectbox(
+                    "Select Staff User",
+                    list(reset_labels.keys()),
+                    index=None,
+                    placeholder="Choose a staff user",
+                    key="it_reset_user"
+                )
+                if reset_choice:
+                    with st.form("it_reset_password_form", clear_on_submit=True):
+                        new_temp = st.text_input("New Temporary Password", type="password")
+                        confirm_temp = st.text_input("Confirm Temporary Password", type="password")
+                        reset_confirm = st.checkbox(
+                            "I confirm I want to reset this user's password."
+                        )
+                        reset_submit = st.form_submit_button("RESET PASSWORD", type="primary")
+                    if reset_submit:
+                        if not reset_confirm:
+                            st.error("Please confirm the password reset.")
+                        elif new_temp != confirm_temp:
+                            st.error("Passwords do not match.")
+                        elif not strong_password(new_temp):
+                            st.error("Use 12+ characters with uppercase, lowercase, number, and symbol.")
+                        else:
+                            target_id = reset_labels[reset_choice]
+                            salt, password_hash = pw_hash(new_temp)
+                            try:
+                                c = conn()
+                                c.execute("""
+                                    UPDATE users
+                                    SET password_salt=?,
+                                        password_hash=?,
+                                        must_change_password=1,
+                                        temporary_password=TRUE,
+                                        password_changed_at=NOW()
+                                    WHERE id=? AND LOWER(username) <> 'itadmin'
+                                """, (salt, password_hash, target_id))
+                                c.commit()
+                                c.close()
+                                audit("", "IT", u["full_name"], "Staff Password Reset",
+                                      f"Staff user ID={target_id}; reset by={u['username']}")
+                                st.success("Password reset. Staff must change it at next login.")
+                            except Exception as ex:
+                                st.error(f"Password reset failed: {ex}")
 
         st.markdown("### Delete Staff")
         deletable=users[users.username.astype(str).str.lower()!="itadmin"].copy() if not users.empty else users
